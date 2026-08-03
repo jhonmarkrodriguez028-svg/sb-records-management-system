@@ -1,23 +1,63 @@
-# XAMPP / local files
+# ============================================================
+
+# SB Records Management System - Git Ignore
+
+# ============================================================
+
+# Local environment
+
+.env
+.env.*
+!.env.example
+
+# XAMPP / local configuration
+
 xampp/
 *.log
 
-# Environment and configuration
-.env
-config.php
+# PHP generated files
 
-# PHP dependencies
-/vendor/
+*.cache
 
-# Uploaded files and private documents
-uploads/
-scanned_docs/
-documents/
+# IDE / Editor files
 
-# Database dumps
-*.sql
-
-# IDE / OS files
 .vscode/
+.idea/
+
+# Operating system files
+
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Temporary files
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Local database backups
+
+*.bak.sql
+*.backup.sql
+*_backup.sql
+
+# Temporary scanned documents
+
+# Keep the folder structure but do not upload private documents.
+
+scanned_docs/*
+!scanned_docs/.gitkeep
+
+# Local test files
+
+test/
+tests/local/
+
+# PHP error/debug output
+
+error_log
+php_errors.log
+debug.log
