@@ -210,11 +210,13 @@ Recommended browsers:
 
 ## ⚙️ Installation
 
+Follow the steps below to install and run the SB Records Management System on a local Windows computer using XAMPP.
+
 ### 1. Install XAMPP
 
-Install XAMPP on your computer.
+Download and install **XAMPP** with Apache, PHP, and MySQL.
 
-Start the following services from the XAMPP Control Panel:
+After installation, open the XAMPP Control Panel and start:
 
 ```text
 Apache
@@ -223,11 +225,17 @@ MySQL
 
 ---
 
-### 2. Copy the Project
+### 2. Clone or Download the Repository
 
-Copy the project folder into the XAMPP `htdocs` directory.
+Clone the repository using Git:
 
-Example:
+```bash
+git clone https://github.com/jhonmarkrodriguez028-svg/sb-records-management-system.git
+```
+
+Or download the repository as a ZIP file from GitHub and extract it.
+
+Move the project folder into the XAMPP `htdocs` directory:
 
 ```text
 C:\xampp\htdocs\sb-records-management-system
@@ -237,13 +245,13 @@ C:\xampp\htdocs\sb-records-management-system
 
 ### 3. Create the Database
 
-Open:
+Open phpMyAdmin:
 
 ```text
 http://localhost/phpmyadmin
 ```
 
-Create a database named:
+Create a new database named:
 
 ```text
 sb_incoming
@@ -253,20 +261,27 @@ sb_incoming
 
 ### 4. Import the Database
 
-Import the project's SQL database file into the newly created database.
+Open the newly created `sb_incoming` database in phpMyAdmin.
 
-Make sure the required tables are available, including:
+Click **Import**.
+
+Select the SQL file included in this repository:
 
 ```text
-in_info
-out_info
+database/sb_incoming.sql
 ```
+
+Then click **Import** or **Go** to execute the SQL file.
+
+After the import is completed, the database should contain the required tables.
 
 ---
 
 ### 5. Configure the Database Connection
 
-Open the database configuration file, such as:
+Open the database connection file in the project.
+
+Depending on the project version, this may be:
 
 ```text
 db_connect.php
@@ -278,7 +293,7 @@ or:
 config.php
 ```
 
-Set the database connection according to your local XAMPP configuration.
+Make sure the database settings match your local XAMPP configuration.
 
 Example:
 
@@ -289,19 +304,67 @@ $password = "";
 $database = "sb_incoming";
 ```
 
+If your MySQL server uses a different port, update the connection configuration accordingly.
+
 ---
 
-### 6. Open the System
+### 6. Run the System
 
-Open your web browser and go to:
+Make sure **Apache** and **MySQL** are running in XAMPP.
+
+Open your browser and navigate to:
 
 ```text
 http://localhost/sb-records-management-system/
 ```
 
-The login page should appear.
+The SB Records Management System login page should appear.
 
 ---
+
+### 7. Login
+
+Use an account that exists in the imported database.
+
+If the system provides a registration page, a new account may be created through the registration functionality.
+
+Administrator accounts have access to restricted administrative functions depending on the assigned user role.
+
+---
+
+### 8. Verify the System
+
+After logging in, verify the following functions:
+
+* Dashboard loads correctly
+* Incoming records can be viewed
+* Outgoing records can be viewed
+* Records can be added
+* Records can be edited or updated
+* Records can be searched
+* Scanned documents can be selected
+* User roles work correctly
+* Authorized users can access administrative functions
+
+---
+
+## 📝 Notes
+
+This project is configured for a **local XAMPP environment**.
+
+The default local database configuration assumes:
+
+```text
+Host: localhost
+Username: root
+Password: empty
+Database: sb_incoming
+```
+
+Your configuration may be different depending on your XAMPP and MySQL setup.
+
+For production deployment, additional configuration and security measures are required.
+
 
 ## 👤 User Roles
 
