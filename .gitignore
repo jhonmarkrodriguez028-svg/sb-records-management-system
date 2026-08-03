@@ -1,0 +1,23 @@
+# XAMPP / local files
+xampp/
+*.log
+
+# Environment and configuration
+.env
+config.php
+
+# PHP dependencies
+/vendor/
+
+# Uploaded files and private documents
+uploads/
+scanned_docs/
+documents/
+
+# Database dumps
+*.sql
+
+# IDE / OS files
+.vscode/
+.DS_Store
+Thumbs.db
